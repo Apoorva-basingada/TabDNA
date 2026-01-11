@@ -37,7 +37,7 @@ document.getElementById("organizeBtn").addEventListener("click", async () => {
             title.includes("mongodb") ||
             title.includes("django") ||
             title.includes("github") ||
-            title.includes("node") || // ✅ now node.js tabs go here
+            title.includes("node") || 
             title.includes("javascript") ||
             url.includes("stackoverflow") ||
             url.includes("github.com")

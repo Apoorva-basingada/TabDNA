@@ -2,7 +2,7 @@ document.getElementById("organizeBtn").addEventListener("click", async () => {
     const resultsDiv = document.getElementById("results");
     resultsDiv.innerHTML = "";
 
-    // Get all tabs in current window
+    // Getting all tabs in current window
     const tabs = await chrome.tabs.query({ currentWindow: true });
 
     const categories = {
@@ -19,7 +19,7 @@ document.getElementById("organizeBtn").addEventListener("click", async () => {
         const title = tab.title.toLowerCase();
         const url = tab.url?.toLowerCase() || "";
 
-        // 📚 STUDY
+        // STUDY
         if (
             title.includes("exam") ||
             title.includes("study") ||
@@ -30,7 +30,7 @@ document.getElementById("organizeBtn").addEventListener("click", async () => {
         ) {
             categories.Study.tabs.push(tab);
 
-            // 💻 CODING / DEV
+        // CODING / DEV
         } else if (
             title.includes("code") ||
             title.includes("programming") ||
@@ -44,7 +44,7 @@ document.getElementById("organizeBtn").addEventListener("click", async () => {
         ) {
             categories.Coding.tabs.push(tab);
 
-            // 🎬 VIDEO / OTT
+        //  VIDEO / OTT
         } else if (
             title.includes("netflix") ||
             title.includes("youtube") ||
@@ -56,7 +56,7 @@ document.getElementById("organizeBtn").addEventListener("click", async () => {
         ) {
             categories.Video.tabs.push(tab);
 
-            // 🎵 MUSIC
+            //  MUSIC
         } else if (
             title.includes("spotify") ||
             title.includes("soundcloud") ||
@@ -68,7 +68,7 @@ document.getElementById("organizeBtn").addEventListener("click", async () => {
         ) {
             categories.Music.tabs.push(tab);
 
-            // 🎨 INTERESTS / ART / FUN
+            // INTERESTS / ART / FUN
         } else if (
             title.includes("pixel") ||
             title.includes("art") ||
@@ -80,7 +80,7 @@ document.getElementById("organizeBtn").addEventListener("click", async () => {
         ) {
             categories.Interests.tabs.push(tab);
 
-            // 💬 SOCIAL
+            //  SOCIAL
         } else if (
             title.includes("instagram") ||
             title.includes("twitter") ||
@@ -92,18 +92,18 @@ document.getElementById("organizeBtn").addEventListener("click", async () => {
         ) {
             categories.Social.tabs.push(tab);
 
-            // ✨ OTHERS
+            //  OTHERS
         } else {
             categories.Others.tabs.push(tab);
         }
     });
 
-    // Sort tabs alphabetically in each category
+    // this Sorts tabs alphabetically in each category
     for (const key in categories) {
         categories[key].tabs.sort((a, b) => a.title.localeCompare(b.title));
     }
 
-    // Display categories and tabs
+    // this Display categories and tabs
     for (const key in categories) {
         const category = categories[key];
         if (category.tabs.length === 0) continue;
@@ -131,7 +131,7 @@ document.getElementById("organizeBtn").addEventListener("click", async () => {
     }
 });
 
-// 🐱 pixel pet interaction
+// pixel pet interaction
 const pet = document.getElementById("pet");
 const bubble = document.getElementById("petBubble");
 
@@ -148,7 +148,7 @@ pet.addEventListener("click", () => {
     bubble.style.display = "block";
 
     pet.style.animation = "none";
-    pet.offsetHeight; // reset animation
+    pet.offsetHeight; 
     pet.style.animation = "idleBounce 1s";
 
     setTimeout(() => {

@@ -62,3 +62,8 @@ The architecture supports future reintegration of Gemini.
 The `backend/` folder contains prototype code designed to communicate with the Gemini API. 
 It is NOT required to run the current MVP and is kept for future extension.
 
+## Team Members
+
+- Apoorva
+- Teammate 1
+- Teammate 2
